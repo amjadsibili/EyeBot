@@ -9,7 +9,8 @@ Required external modules :
 5. pyscreenshot
 
 Additional files :
-1. https://i.imgur.com/9lsZPfy.jpg download this image and paste it on the same folder of the script
+1. https://i.imgur.com/9lsZPfy.jpg download this image for performing template matching technique and paste it on the same folder of the script
 
 
- Open the page which is to be bypassed and run the script.
+ Open the page which is to be bypassed and run the script main.py
+ NB. reCAPTCHA box must be visible to the user during execution of script
