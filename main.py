@@ -25,32 +25,39 @@ for pt in zip(*loc[::-1]):
     coords.append(pt[0])        #storing upper left coordinates of reCAPTCHA box
     coords.append(pt[1])
 
-print '-> Location found reCAPTCHA at :',coords
 
-reCAPTCHA_box_x_bias = 10
-reCAPTCHA_box_y_bias = 20
+if len(coords)!= 0 :
+   
+    print '-> Location found reCAPTCHA at :',coords
 
-coords[0] = coords[0] + reCAPTCHA_box_x_bias
-coords[1] = coords[1] + reCAPTCHA_box_y_bias
+    reCAPTCHA_box_x_bias = 10
+    reCAPTCHA_box_y_bias = 20
 
-print '-> Moving cursor to (1, 1)'
-pyautogui.moveTo(1, 1, duration = 0)
+    coords[0] = coords[0] + reCAPTCHA_box_x_bias
+    coords[1] = coords[1] + reCAPTCHA_box_y_bias
 
-print '-> Moving cursor towards reCAPTCHA'
-pyautogui.moveTo(coords[0], coords[1], duration = 0.12)
+    print '-> Moving cursor to (1, 1)'
+    pyautogui.moveTo(1, 1, duration = 0)
 
-print '-> Performing click action on reCAPTCHA'
-pyautogui.click()
+    print '-> Moving cursor towards reCAPTCHA'
+    pyautogui.moveTo(coords[0], coords[1], duration = 0.12)
 
-time.sleep(4)
+    print '-> Performing click action on reCAPTCHA'
+    pyautogui.click()
 
-Submit_button_x_bias = 0
-Submit_button_y_bias = 75
+    time.sleep(4)
 
-coords[0] = coords[0] + Submit_button_x_bias
-coords[1] = coords[1] + Submit_button_y_bias
+    Submit_button_x_bias = 0
+    Submit_button_y_bias = 75
 
-pyautogui.moveTo(coords[0], coords[1], duration = 0.14)
+    coords[0] = coords[0] + Submit_button_x_bias
+    coords[1] = coords[1] + Submit_button_y_bias
 
-print '-> Performing click action on Submit'
-pyautogui.click()
+    pyautogui.moveTo(coords[0], coords[1], duration = 0.14)
+
+    print '-> Performing click action on Submit'
+    pyautogui.click()
+
+ else :
+    print '-> reCAPTCHA box not found!'
+    
