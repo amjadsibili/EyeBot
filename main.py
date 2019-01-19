@@ -7,7 +7,7 @@ import pyscreenshot as ImageGrab
 
 time.sleep(1)
 coords = []
-print '-> Locating coordinates of reCAPTCHA...'
+print ('-> Locating coordinates of reCAPTCHA...')
 
 pic = pyautogui.screenshot()    #taking screenshot
 pic.save('main.jpg')            #saving screenshot
@@ -28,7 +28,7 @@ for pt in zip(*loc[::-1]):
 
 if len(coords)!= 0 :
    
-    print '-> Location found reCAPTCHA at :',coords
+    print ('-> Location found reCAPTCHA at :',coords)
 
     reCAPTCHA_box_x_bias = 10
     reCAPTCHA_box_y_bias = 20
@@ -36,13 +36,13 @@ if len(coords)!= 0 :
     coords[0] = coords[0] + reCAPTCHA_box_x_bias
     coords[1] = coords[1] + reCAPTCHA_box_y_bias
 
-    print '-> Moving cursor to (1, 1)'
+    print ('-> Moving cursor to (1, 1)')
     pyautogui.moveTo(1, 1, duration = 0)
 
-    print '-> Moving cursor towards reCAPTCHA'
+    print ('-> Moving cursor towards reCAPTCHA')
     pyautogui.moveTo(coords[0], coords[1], duration = 0.12)
 
-    print '-> Performing click action on reCAPTCHA'
+    print ('-> Performing click action on reCAPTCHA')
     pyautogui.click()
 
     time.sleep(4)
@@ -55,9 +55,9 @@ if len(coords)!= 0 :
 
     pyautogui.moveTo(coords[0], coords[1], duration = 0.14)
 
-    print '-> Performing click action on Submit'
+    print ('-> Performing click action on Submit')
     pyautogui.click()
 
  else :
-    print '-> reCAPTCHA box not found!'
+    print ('-> reCAPTCHA box not found!')
     
